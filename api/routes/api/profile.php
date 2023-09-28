@@ -118,6 +118,14 @@ $app->post('/profileimg', function ($request, $response) {
 
 });
 
+$app->options('/profileimg', function ($request, $response) {
+    
+    $response->set('Access-Control-Allow-Methods', 'POST');
+    $response->set('Access-Control-Allow-Headers', 'Authorization');
+    $response->status(200);
+    
+});
+
 $app->options('/profile', function ($request, $response) {
     
     $response->set('Access-Control-Allow-Methods', 'DELETE, PUT', 'POST');
